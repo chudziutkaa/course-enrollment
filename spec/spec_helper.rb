@@ -1,4 +1,6 @@
+require 'rspec_api_documentation'
 require 'simplecov'
+
 SimpleCov.start
 
 RSpec.configure do |config|
