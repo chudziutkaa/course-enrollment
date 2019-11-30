@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
 
+gem 'bcrypt', '~> 3.1', '>= 3.1.13'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
@@ -14,6 +15,7 @@ gem 'rails', '6.0.1'
 
 group :development, :test do
   gem 'factory_bot', '~> 4.8', '>= 4.8.2'
+  gem 'faker', '~> 2.7'
   gem 'pry', '~> 0.12.2'
   gem 'rspec_api_documentation', '~> 6.1'
   gem 'rspec-rails', '~> 3.9'
