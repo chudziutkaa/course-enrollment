@@ -3,10 +3,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
 
-gem 'rails', '6.0.1'
+gem 'bootsnap', '>= 1.4.2', require: false
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
-gem 'bootsnap', '>= 1.4.2', require: false
+gem 'raddocs', '~> 2.2'
+gem 'rails', '6.0.1'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
@@ -14,6 +15,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   gem 'factory_bot', '~> 4.8', '>= 4.8.2'
   gem 'pry', '~> 0.12.2'
+  gem 'rspec_api_documentation', '~> 6.1'
   gem 'rspec-rails', '~> 3.9'
   gem 'shoulda-matchers', '~> 4.1', '>= 4.1.2'
 end
