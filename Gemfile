@@ -12,7 +12,10 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # gem 'rack-cors'
 
 group :development, :test do
+  gem 'factory_bot', '~> 4.8', '>= 4.8.2'
   gem 'pry', '~> 0.12.2'
+  gem 'rspec-rails', '~> 3.9'
+  gem 'shoulda-matchers', '~> 4.1', '>= 4.1.2'
 end
 
 group :development do
@@ -22,6 +25,10 @@ group :development do
   gem 'rubocop-rails', '~> 2.4'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem 'simplecov', '~> 0.17.1', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
