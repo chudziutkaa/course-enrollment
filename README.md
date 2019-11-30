@@ -1,24 +1,37 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Course Enrollment
 
-Things you may want to cover:
+A service that implements a simple Course Enrollment feature.
 
-* Ruby version
+## Project setup
 
-* System dependencies
+It is recommended to use Docker to set up the project.
 
-* Configuration
+Follow the instructions below:
 
-* Database creation
+```shell
+docker-compose build
+docker-compose run web rails db:setup
+```
 
-* Database initialization
+### Running the tests
 
-* How to run the test suite
+To run all tests use command:
 
-* Services (job queues, cache servers, search engines, etc.)
+```shell
+docker-compose run web rspec
+```
 
-* Deployment instructions
+To check the test coverage please type the below command in the application directory when all tests finish:
 
-* ...
+```shell
+open coverage/index.html
+```
+
+### API documentation
+
+Make sure your server is running (`docker-compose up`). Then, visit:
+
+```shell
+http://localhost:3000/docs
+```
