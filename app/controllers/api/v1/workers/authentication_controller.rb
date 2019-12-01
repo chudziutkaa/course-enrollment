@@ -9,12 +9,12 @@ module Api
         def authenticate
           token = AuthenticateUser.call(authentication_params)
           render json: { auth_token: token }, status: :ok
-        # rescue AuthenticateUser::InvalidCredentials => e
-        #   render_unauthorized_response(e)
-        # rescue ActionController::ParameterMissing, AuthenticateUser::MissingParams
-        #   render_parameter_missing_response
-        # rescue ActiveRecord::RecordNotFound
-        #   render_record_not_found_response
+        rescue AuthenticateUser::InvalidCredentials => e
+          render_unauthorized_response(e)
+        rescue ActionController::ParameterMissing, AuthenticateUser::MissingParams
+          render_parameter_missing_response
+        rescue ActiveRecord::RecordNotFound
+          render_record_not_found_response
         end
 
         private

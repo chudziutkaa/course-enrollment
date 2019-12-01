@@ -1,0 +1,38 @@
+{
+  "resources": [
+    {
+      "name": "Authentication",
+      "explanation": "User authentication",
+      "examples": [
+        {
+          "description": "Authentication with email and password",
+          "link": "authentication/authentication_with_email_and_password.json",
+          "groups": "all",
+          "route": "api/v1/authenticate",
+          "method": "post"
+        },
+        {
+          "description": "Authentication with missing parameter",
+          "link": "authentication/authentication_with_missing_parameter.json",
+          "groups": "all",
+          "route": "api/v1/authenticate",
+          "method": "post"
+        },
+        {
+          "description": "Authentication with missing parameter",
+          "link": "authentication/authentication_with_missing_parameter.json",
+          "groups": "all",
+          "route": "api/v1/authenticate",
+          "method": "post"
+        },
+        {
+          "description": "Authentication with wrong email and password",
+          "link": "authentication/authentication_with_wrong_email_and_password.json",
+          "groups": "all",
+          "route": "api/v1/authenticate",
+          "method": "post"
+        }
+      ]
+    }
+  ]
+}
