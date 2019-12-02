@@ -8,7 +8,7 @@ module Api
         if course.save
           render json: { message: 'Course successfully created' }, status: :created
         else
-          render json: { error: course.error.full_messages.to_sentence },
+          render json: { error: course.errors.full_messages.to_sentence },
                  status: :unprocessable_entity
         end
       end

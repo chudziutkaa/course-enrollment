@@ -26,11 +26,28 @@ resource 'Courses' do
         }
       end
 
-      example 'Course successfully created' do
-        do_request
+      context 'when valid attributes' do
+        example 'Course successfully created' do
+          do_request
 
-        expect(status).to eq(201)
-        expect(response_body).to eq({ message: 'Course successfully created' }.to_json)
+          expect(status).to eq(201)
+          expect(response_body).to eq({ message: 'Course successfully created' }.to_json)
+        end
+      end
+
+      context 'when invalid attributes' do
+        before do
+          allow_any_instance_of(Course).to receive(:valid?).and_return(false)
+          allow_any_instance_of(Course).to receive_message_chain(:errors, :full_messages)
+            .and_return(['Invalid parameters'])
+        end
+
+        example 'Course not created' do
+          do_request
+
+          expect(status).to eq(422)
+          expect(response_body).to eq({ error: 'Invalid parameters' }.to_json)
+        end
       end
     end
 
