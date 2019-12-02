@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       end
 
       resources :courses, only: %i[create destroy]
+      resources :enrollments, only: %i[create destroy]
       resources :users, only: %i[create destroy]
     end
   end
