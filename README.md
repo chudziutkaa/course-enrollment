@@ -30,6 +30,12 @@ open coverage/index.html
 
 ### API documentation
 
+To refresh the API documentation run the following command:
+
+```shell
+rake docs:generate
+```
+
 Make sure your server is running (`docker-compose up`). Then, visit:
 
 ```shell
