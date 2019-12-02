@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class AuthenticateUser < BaseService
+class AuthenticateResource < BaseService
   MissingParams = Class.new(StandardError)
   InvalidCredentials = Class.new(StandardError)
 
@@ -10,7 +10,7 @@ class AuthenticateUser < BaseService
 
   def call
     validate_presence_of_params
-    authenticate_user
+    authenticate_resource
     JsonWebToken.encode(encoding_params, Rails.application.credentials[:secret_key_base])
   end
 
@@ -32,19 +32,19 @@ class AuthenticateUser < BaseService
     raise MissingParams, 'Email or password are missing'
   end
 
-  def user
-    @user ||= User.worker.find_by!(email: email)
+  def resource
+    @resource ||= Employee.find_by!(email: email)
   end
 
-  def authenticate_user
-    return if user&.authenticate(password)
+  def authenticate_resource
+    return if resource&.authenticate(password)
 
     raise InvalidCredentials, 'Invalid password'
   end
 
   def encoding_params
     {
-      user_id: user.id,
+      resource_id: resource.id,
       exp: 24.hours.from_now.to_i
     }
   end

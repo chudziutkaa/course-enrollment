@@ -8,7 +8,7 @@ module Api
 
         included do
           rescue_from ActiveRecord::RecordNotFound, with: :render_record_not_found_response
-          rescue_from AuthorizeUser::AuthorizationRequestHeaderMissing,
+          rescue_from AuthorizeResource::AuthorizationRequestHeaderMissing,
             with: :render_bad_request_response
           rescue_from JsonWebToken::ExpiredSignature, JsonWebToken::DecodeError do |e|
             render_unauthorized_response(e)

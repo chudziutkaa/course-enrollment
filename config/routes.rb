@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      scope module: 'workers' do
+      scope module: 'employees' do
         post 'authenticate', to: 'authentication#authenticate'
       end
     end

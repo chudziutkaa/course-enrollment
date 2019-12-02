@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class AuthorizeUser < BaseService
+class AuthorizeResource < BaseService
   AuthorizationRequestHeaderMissing = Class.new(StandardError)
 
   def initialize(headers = {})
@@ -8,7 +8,7 @@ class AuthorizeUser < BaseService
   end
 
   def call
-    user
+    resource
   end
 
   private
@@ -25,7 +25,7 @@ class AuthorizeUser < BaseService
     JsonWebToken.decode(token, Rails.application.credentials[:secret_key_base])
   end
 
-  def user
-    @user = User.worker.find(decoded_token[:user_id])
+  def resource
+    @resource = Employee.find(decoded_token[:resource_id])
   end
 end

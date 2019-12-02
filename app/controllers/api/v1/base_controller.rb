@@ -12,7 +12,7 @@ module Api
       private
 
       def authorize_request
-        @current_user = AuthorizeUser.call(request.headers)
+        @current_user = AuthorizeResource.call(request.headers)
         return if current_user.present?
 
         render json: { error: 'Not Authorized' }, status: :unauthorized

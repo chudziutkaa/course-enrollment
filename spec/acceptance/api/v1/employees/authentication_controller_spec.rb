@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 resource 'Authentication', type: :acceptance do
-  explanation 'User authentication'
+  explanation 'Employee Authentication'
   header 'Accept', 'application/json'
   header 'Content-Type', 'application/json'
   header 'Host', '127.0.0.1'
@@ -10,9 +10,9 @@ resource 'Authentication', type: :acceptance do
     parameter :email, type: :string, required: true
     parameter :password, type: :string, required: true
 
-    let(:email) { 'worker@danceschool.org' }
+    let(:email) { 'employee@danceschool.org' }
     let(:password) { 'pass123456' }
-    let!(:user) { create(:user, :worker, email: email, password: password) }
+    let!(:employee) { create(:employee, email: email, password: password) }
     let(:token) { 'super_token' }
 
     context 'when all parameters are given' do
