@@ -6,4 +6,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   enum role: { worker: 1, student: 0 }
+
+  has_many :enrollments, dependent: :destroy
+  has_many :courses, through: :enrollments
 end
