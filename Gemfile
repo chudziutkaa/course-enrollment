@@ -27,8 +27,6 @@ group :development do
   gem 'rubocop', '0.77.0', require: false
   gem 'rubocop-performance', '~> 1.5', '>= 1.5.1'
   gem 'rubocop-rails', '~> 2.4'
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
 group :test do
