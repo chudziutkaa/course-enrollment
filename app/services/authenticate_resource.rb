@@ -37,7 +37,7 @@ class AuthenticateResource < BaseService
   end
 
   def authenticate_resource
-    return if resource&.authenticate(password)
+    return if resource.authenticate(password)
 
     raise InvalidCredentials, 'Invalid password'
   end
