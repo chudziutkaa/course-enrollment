@@ -1,15 +1,41 @@
 require 'rails_helper'
 
 resource 'Courses' do
-  explanation 'Courses resource. Two endpoints provided: POST and DELETE'
+  explanation 'Courses resource. Three endpoints provided: GET, POST and DELETE'
   header 'Accept', 'application/json'
   header 'Content-Type', 'application/json'
   header 'Host', '127.0.0.1'
 
   let!(:employee) { create(:employee) }
+  let!(:course) { create(:course, users_count: 7) }
 
   before do
     authorize_resource(employee)
+  end
+
+  get 'api/v1/courses' do
+    let(:expected_response) do
+      {
+        'courses' => [
+          { 'id' => course.id, 'name' => course.name, 'users_count' => course.users_count }
+        ],
+        'meta' => {
+          'current_page' => 1,
+          'next_page' => nil,
+          'per_page' => 10,
+          'prev_page' => nil,
+          'total_count' => 1,
+          'total_pages' => 1
+        }
+      }
+    end
+
+    example 'List of courses' do
+      do_request
+
+      expect(status).to eq(200)
+      expect(JSON.parse(response_body)).to eq(expected_response)
+    end
   end
 
   post 'api/v1/courses' do
