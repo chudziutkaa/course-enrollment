@@ -14,6 +14,8 @@ docker-compose build
 docker-compose run web rails db:setup
 ```
 
+Make sure seed were executed. Use the Employee data to authenticate in purspose of receiving authorization token.
+
 ### Running the tests
 
 To run all tests use command:
