@@ -1,22 +1,24 @@
 {
-  "resource": "Authentication",
-  "resource_explanation": "Employee Authentication",
+  "resource": "Enrollments",
+  "resource_explanation": "Enrollments resource for keeping users enrollments for courses.\n               Two endpoints provided: POST and DELETE",
   "http_method": "POST",
-  "route": "api/v1/authenticate",
-  "description": "Authentication with missing parameter",
+  "route": "api/v1/enrollments",
+  "description": "Enrollment creation with missing parameter",
   "explanation": null,
   "parameters": [
     {
-      "type": "string",
+      "scope": "enrollment",
+      "type": "integer",
       "required": true,
-      "name": "email",
-      "description": " email"
+      "name": "course_id",
+      "description": "Enrollment course"
     },
     {
-      "type": "string",
+      "scope": "enrollment",
+      "type": "integer",
       "required": true,
-      "name": "password",
-      "description": " password"
+      "name": "user_id",
+      "description": "Enrollment user"
     }
   ],
   "response_fields": [
@@ -25,8 +27,8 @@
   "requests": [
     {
       "request_method": "POST",
-      "request_path": "api/v1/authenticate",
-      "request_body": "{\n  \"email\": \"employee@danceschool.org\"\n}",
+      "request_path": "api/v1/enrollments",
+      "request_body": "{\n  \"enrollment\": {\n  }\n}",
       "request_headers": {
         "Content-Type": "application/json"
       },
@@ -45,8 +47,8 @@
         "Referrer-Policy": "strict-origin-when-cross-origin",
         "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "02d065ca-e62d-4459-9a9f-e4960891b1d6",
-        "X-Runtime": "0.095723",
+        "X-Request-Id": "00f162a9-87b5-4351-adc0-c35ad1db8e9d",
+        "X-Runtime": "0.064121",
         "Vary": "Origin",
         "Content-Length": "39"
       },

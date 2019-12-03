@@ -2,7 +2,7 @@
   "resources": [
     {
       "name": "Authentication",
-      "explanation": "User authentication",
+      "explanation": "Employee Authentication",
       "examples": [
         {
           "description": "Authentication with email and password",
@@ -31,6 +31,149 @@
           "groups": "all",
           "route": "api/v1/authenticate",
           "method": "post"
+        }
+      ]
+    },
+    {
+      "name": "Courses",
+      "explanation": "Courses resource. Three endpoints provided: GET, POST and DELETE",
+      "examples": [
+        {
+          "description": "Course creation with missing parameter",
+          "link": "courses/course_creation_with_missing_parameter.json",
+          "groups": "all",
+          "route": "api/v1/courses",
+          "method": "post"
+        },
+        {
+          "description": "Course not created",
+          "link": "courses/course_not_created.json",
+          "groups": "all",
+          "route": "api/v1/courses",
+          "method": "post"
+        },
+        {
+          "description": "Course not found",
+          "link": "courses/course_not_found.json",
+          "groups": "all",
+          "route": "api/v1/courses/:id",
+          "method": "delete"
+        },
+        {
+          "description": "Course successfully created",
+          "link": "courses/course_successfully_created.json",
+          "groups": "all",
+          "route": "api/v1/courses",
+          "method": "post"
+        },
+        {
+          "description": "Course successfully deleted",
+          "link": "courses/course_successfully_deleted.json",
+          "groups": "all",
+          "route": "api/v1/courses/:id",
+          "method": "delete"
+        },
+        {
+          "description": "List of courses",
+          "link": "courses/list_of_courses.json",
+          "groups": "all",
+          "route": "api/v1/courses",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "Enrollments",
+      "explanation": "Enrollments resource for keeping users enrollments for courses.\n               Two endpoints provided: POST and DELETE",
+      "examples": [
+        {
+          "description": "Enrollment creation with missing parameter",
+          "link": "enrollments/enrollment_creation_with_missing_parameter.json",
+          "groups": "all",
+          "route": "api/v1/enrollments",
+          "method": "post"
+        },
+        {
+          "description": "Enrollment to course failed",
+          "link": "enrollments/enrollment_to_course_failed.json",
+          "groups": "all",
+          "route": "api/v1/enrollments",
+          "method": "post"
+        },
+        {
+          "description": "User has not been enrolled to the course",
+          "link": "enrollments/user_has_not_been_enrolled_to_the_course.json",
+          "groups": "all",
+          "route": "api/v1/enrollments/:id",
+          "method": "delete"
+        },
+        {
+          "description": "User successfully enrolled to course",
+          "link": "enrollments/user_successfully_enrolled_to_course.json",
+          "groups": "all",
+          "route": "api/v1/enrollments",
+          "method": "post"
+        },
+        {
+          "description": "User successfully withdrawed from course",
+          "link": "enrollments/user_successfully_withdrawed_from_course.json",
+          "groups": "all",
+          "route": "api/v1/enrollments/:id",
+          "method": "delete"
+        }
+      ]
+    },
+    {
+      "name": "User Courses",
+      "explanation": "Courses resource. Two endpoints provided: POST and DELETE",
+      "examples": [
+        {
+          "description": "List of courses user has enrolled to",
+          "link": "user_courses/list_of_courses_user_has_enrolled_to.json",
+          "groups": "all",
+          "route": "api/v1/users/:user_id/courses",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "explanation": "Users resource. Two endpoints provided: POST and DELETE",
+      "examples": [
+        {
+          "description": "User creation with missing parameter",
+          "link": "users/user_creation_with_missing_parameter.json",
+          "groups": "all",
+          "route": "api/v1/users",
+          "method": "post"
+        },
+        {
+          "description": "User email not unique",
+          "link": "users/user_email_not_unique.json",
+          "groups": "all",
+          "route": "api/v1/users",
+          "method": "post"
+        },
+        {
+          "description": "User not found",
+          "link": "users/user_not_found.json",
+          "groups": "all",
+          "route": "api/v1/users/:id",
+          "method": "delete"
+        },
+        {
+          "description": "User successfully created",
+          "link": "users/user_successfully_created.json",
+          "groups": "all",
+          "route": "api/v1/users",
+          "method": "post"
+        },
+        {
+          "description": "User successfully deleted",
+          "link": "users/user_successfully_deleted.json",
+          "groups": "all",
+          "route": "api/v1/users/:id",
+          "method": "delete"
         }
       ]
     }

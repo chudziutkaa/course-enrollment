@@ -1,0 +1,60 @@
+{
+  "resource": "Enrollments",
+  "resource_explanation": "Enrollments resource for keeping users enrollments for courses.\n               Two endpoints provided: POST and DELETE",
+  "http_method": "POST",
+  "route": "api/v1/enrollments",
+  "description": "User successfully enrolled to course",
+  "explanation": null,
+  "parameters": [
+    {
+      "scope": "enrollment",
+      "type": "integer",
+      "required": true,
+      "name": "course_id",
+      "description": "Enrollment course"
+    },
+    {
+      "scope": "enrollment",
+      "type": "integer",
+      "required": true,
+      "name": "user_id",
+      "description": "Enrollment user"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "api/v1/enrollments",
+      "request_body": "{\n  \"enrollment\": {\n    \"course_id\": 8,\n    \"user_id\": 1\n  }\n}",
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 201,
+      "response_status_text": "Created",
+      "response_body": "{\n  \"message\": \"User successfully enrolled to the course\"\n}",
+      "response_headers": {
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "X-Download-Options": "noopen",
+        "X-Permitted-Cross-Domain-Policies": "none",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "W/\"dbc3c6e9d9ca911294b773adba16f39d\"",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Request-Id": "e53a427e-0b02-40b1-8a45-8d92aa0d30f6",
+        "X-Runtime": "0.132302",
+        "Vary": "Origin",
+        "Content-Length": "54"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

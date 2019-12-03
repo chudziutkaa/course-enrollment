@@ -1,22 +1,16 @@
 {
-  "resource": "Authentication",
-  "resource_explanation": "Employee Authentication",
+  "resource": "Courses",
+  "resource_explanation": "Courses resource. Three endpoints provided: GET, POST and DELETE",
   "http_method": "POST",
-  "route": "api/v1/authenticate",
-  "description": "Authentication with email and password",
+  "route": "api/v1/courses",
+  "description": "Course successfully created",
   "explanation": null,
   "parameters": [
     {
       "type": "string",
       "required": true,
-      "name": "email",
-      "description": " email"
-    },
-    {
-      "type": "string",
-      "required": true,
-      "name": "password",
-      "description": " password"
+      "name": "name",
+      "description": " name"
     }
   ],
   "response_fields": [
@@ -25,17 +19,17 @@
   "requests": [
     {
       "request_method": "POST",
-      "request_path": "api/v1/authenticate",
-      "request_body": "{\n  \"email\": \"employee@danceschool.org\",\n  \"password\": \"pass123456\"\n}",
+      "request_path": "api/v1/courses",
+      "request_body": "{\n  \"course\": {\n    \"name\": \"Aerial Hoop\"\n  }\n}",
       "request_headers": {
         "Content-Type": "application/json"
       },
       "request_query_parameters": {
       },
       "request_content_type": "application/json",
-      "response_status": 200,
-      "response_status_text": "OK",
-      "response_body": "{\n  \"auth_token\": \"super_token\"\n}",
+      "response_status": 201,
+      "response_status_text": "Created",
+      "response_body": "{\n  \"message\": \"Course successfully created\"\n}",
       "response_headers": {
         "X-Frame-Options": "SAMEORIGIN",
         "X-XSS-Protection": "1; mode=block",
@@ -44,12 +38,12 @@
         "X-Permitted-Cross-Domain-Policies": "none",
         "Referrer-Policy": "strict-origin-when-cross-origin",
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"9a0ba85fb67757b8398dde743aa42a6b\"",
+        "ETag": "W/\"4dbf7d909f897132e1d45ab86f94dc57\"",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "2bbbcc3a-61bf-438d-8e93-df5511d945f4",
-        "X-Runtime": "0.114128",
+        "X-Request-Id": "e70b1b4d-40a9-4455-b967-0108713a855c",
+        "X-Runtime": "0.079947",
         "Vary": "Origin",
-        "Content-Length": "28"
+        "Content-Length": "41"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null

@@ -1,22 +1,16 @@
 {
-  "resource": "Authentication",
-  "resource_explanation": "Employee Authentication",
+  "resource": "Courses",
+  "resource_explanation": "Courses resource. Three endpoints provided: GET, POST and DELETE",
   "http_method": "POST",
-  "route": "api/v1/authenticate",
-  "description": "Authentication with email and password",
+  "route": "api/v1/courses",
+  "description": "Course creation with missing parameter",
   "explanation": null,
   "parameters": [
     {
       "type": "string",
       "required": true,
-      "name": "email",
-      "description": " email"
-    },
-    {
-      "type": "string",
-      "required": true,
-      "name": "password",
-      "description": " password"
+      "name": "name",
+      "description": " name"
     }
   ],
   "response_fields": [
@@ -25,17 +19,17 @@
   "requests": [
     {
       "request_method": "POST",
-      "request_path": "api/v1/authenticate",
-      "request_body": "{\n  \"email\": \"employee@danceschool.org\",\n  \"password\": \"pass123456\"\n}",
+      "request_path": "api/v1/courses",
+      "request_body": "{\n  \"course\": {\n  }\n}",
       "request_headers": {
         "Content-Type": "application/json"
       },
       "request_query_parameters": {
       },
       "request_content_type": "application/json",
-      "response_status": 200,
-      "response_status_text": "OK",
-      "response_body": "{\n  \"auth_token\": \"super_token\"\n}",
+      "response_status": 422,
+      "response_status_text": "Unprocessable Entity",
+      "response_body": "{\n  \"error\": \"Missing required parameters\"\n}",
       "response_headers": {
         "X-Frame-Options": "SAMEORIGIN",
         "X-XSS-Protection": "1; mode=block",
@@ -44,12 +38,11 @@
         "X-Permitted-Cross-Domain-Policies": "none",
         "Referrer-Policy": "strict-origin-when-cross-origin",
         "Content-Type": "application/json; charset=utf-8",
-        "ETag": "W/\"9a0ba85fb67757b8398dde743aa42a6b\"",
-        "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Request-Id": "2bbbcc3a-61bf-438d-8e93-df5511d945f4",
-        "X-Runtime": "0.114128",
+        "Cache-Control": "no-cache",
+        "X-Request-Id": "483f0197-1746-477c-b200-dba5f45de229",
+        "X-Runtime": "0.070401",
         "Vary": "Origin",
-        "Content-Length": "28"
+        "Content-Length": "39"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null

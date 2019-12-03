@@ -1,22 +1,16 @@
 {
-  "resource": "Authentication",
-  "resource_explanation": "Employee Authentication",
-  "http_method": "POST",
-  "route": "api/v1/authenticate",
-  "description": "Authentication with missing parameter",
+  "resource": "Enrollments",
+  "resource_explanation": "Enrollments resource for keeping users enrollments for courses.\n               Two endpoints provided: POST and DELETE",
+  "http_method": "DELETE",
+  "route": "api/v1/enrollments/:id",
+  "description": "User has not been enrolled to the course",
   "explanation": null,
   "parameters": [
     {
-      "type": "string",
+      "type": "integer",
       "required": true,
-      "name": "email",
-      "description": " email"
-    },
-    {
-      "type": "string",
-      "required": true,
-      "name": "password",
-      "description": " password"
+      "name": "id",
+      "description": " id"
     }
   ],
   "response_fields": [
@@ -24,9 +18,9 @@
   ],
   "requests": [
     {
-      "request_method": "POST",
-      "request_path": "api/v1/authenticate",
-      "request_body": "{\n  \"email\": \"employee@danceschool.org\"\n}",
+      "request_method": "DELETE",
+      "request_path": "api/v1/enrollments/1",
+      "request_body": null,
       "request_headers": {
         "Content-Type": "application/json"
       },
@@ -35,7 +29,7 @@
       "request_content_type": "application/json",
       "response_status": 422,
       "response_status_text": "Unprocessable Entity",
-      "response_body": "{\n  \"error\": \"Missing required parameters\"\n}",
+      "response_body": "{\n  \"error\": \"Cannot withdraw user from this course\"\n}",
       "response_headers": {
         "X-Frame-Options": "SAMEORIGIN",
         "X-XSS-Protection": "1; mode=block",
@@ -45,10 +39,10 @@
         "Referrer-Policy": "strict-origin-when-cross-origin",
         "Content-Type": "application/json; charset=utf-8",
         "Cache-Control": "no-cache",
-        "X-Request-Id": "02d065ca-e62d-4459-9a9f-e4960891b1d6",
-        "X-Runtime": "0.095723",
+        "X-Request-Id": "0d1985c5-3436-4d1b-8d62-030241e22d50",
+        "X-Runtime": "0.077825",
         "Vary": "Origin",
-        "Content-Length": "39"
+        "Content-Length": "49"
       },
       "response_content_type": "application/json; charset=utf-8",
       "curl": null
